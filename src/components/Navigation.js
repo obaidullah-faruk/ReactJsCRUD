@@ -1,20 +1,26 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("Navigation");
-  }
-  render() {
-    return (
-      <div>
+import { Home, About, Crud, Error } from "../components";
+
+const Navigation = () => {
+  console.log("Navigation");
+
+  return (
+    <div>
+      <BrowserRouter>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/crud">Crud</NavLink>
         <NavLink to="/about">About</NavLink>
-      </div>
-    );
-  }
-}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/crud" exact component={Crud} />
+          <Route path="/about" exact component={About} />
+          <Route component={Error} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default Navigation;

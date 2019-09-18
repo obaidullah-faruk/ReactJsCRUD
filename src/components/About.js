@@ -6,7 +6,11 @@ class About extends React.Component {
     console.log("About");
   }
   render() {
-    return <div>About Component</div>;
+    return (
+      <div>
+        <h1>This is the About Component</h1>
+      </div>
+    );
   }
 }
 
