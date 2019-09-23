@@ -24,13 +24,13 @@ class ShowData extends React.Component {
   }
 
   contact_info_list = () => {
-    console.log("Faruk");
     const { contact_lists } = this.state;
     let x = (
       <ul>
         {contact_lists.map(individual_list => (
           <li key={individual_list.id}>
             {individual_list.name} {individual_list.email}
+            <br></br>
           </li>
         ))}
       </ul>
@@ -41,8 +41,9 @@ class ShowData extends React.Component {
   render() {
     return (
       <div>
-        Hello! I'm Show Data Component. [Child Component of CRUD component.]
-        {this.contact_info_list()}
+        <h4>Hello! I'm Show Data Component.</h4>
+        <span>[Child Component of CRUD component.]</span>
+        <h4>{this.contact_info_list()}</h4>
       </div>
     );
   }
